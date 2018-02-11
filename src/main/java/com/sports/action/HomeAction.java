@@ -1,5 +1,6 @@
 package com.sports.action;
 
+import com.sports.model.SportsFirstClass;
 import com.sports.service.IHomeService;
 import com.sports.service.ISportEventService;
 import com.sports.utils.BaseController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,9 +39,10 @@ public class HomeAction extends BaseController{
     public
     @ResponseBody
     String getHomeSportEvent(@RequestParam("user_like") String user_like) {
+        List<SportsFirstClass> sportsFirstClasses = sportEventService.getSportEventsByType(user_like);
         Map<String, Object> result = new HashMap<>();
-
-        result.put("result", sportEventService.getSportEventsByType(user_like));
+        result.put("result", GsonUtils.getInstance().toJson(sportsFirstClasses));
+        //result.put("result", sportEventService.getSportEventsByType(user_like));
         return CollectionUtils.getOutComeObject(SUCCESS, OPERATIONSUCCESSMESSAGE, result);
     }
 }

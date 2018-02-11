@@ -107,4 +107,10 @@ public class SportEventServiceImpl implements ISportEventService {
         result = Arrays.asList(myTypes);
         return result;
     }
+
+    @Override
+    public int getUserLikeById(int id) {
+        int userLike = userDao.getUserLikeById(id);
+        return userLike;
+    }
 }

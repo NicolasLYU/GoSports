@@ -29,9 +29,9 @@ public class TestSportEvent {
     public void testCreateNewSportEvent() {
 
         CreateSportEvent sportEvent = new CreateSportEvent();
-        sportEvent.setEvent_sport("一起打篮球");
+        sportEvent.setEvent_sport("测试中文  ");
         sportEvent.setEvent_sport_type("001");
-        sportEvent.setEvent_description("大家一起来打篮球啊！！！！！");
+        sportEvent.setEvent_description("basketball ..");
         sportEvent.setEvent_participer_number(10);
         sportEvent.setEvent_location("Troyes");
         sportEvent.setEvent_start_time("2017-5-1 12:00:00");
@@ -51,5 +51,10 @@ public class TestSportEvent {
 
         List<SportsFirstClass> secondClassList = sportEventService.getSportEventsByType(types);
         System.out.print(secondClassList.toString());
+    }
+
+    @Test
+    public void testSetSportEventLiked(){
+
     }
 }

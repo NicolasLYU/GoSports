@@ -20,4 +20,6 @@ public interface UserDao {
     public int addUser(User user);
 
     public boolean createFriendRequest(FriendRequest friendRequest);
+
+    int getUserLikeById(int id);
 }

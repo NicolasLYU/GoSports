@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>UTT</groupId>
-  <artifactId>SPORTS2</artifactId>
+  <artifactId>GoSports</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>SPORTS2 Maven Webapp</name>
+  <name>GoSports Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
     <spring.version>4.3.3.RELEASE</spring.version>
@@ -59,7 +59,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
+      <version>4.1.7.RELEASE</version>
       <scope>test</scope>
     </dependency>
 
@@ -113,11 +113,11 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>RELEASE</version>
+      <version>4.1.7.RELEASE</version>
     </dependency>
   </dependencies>
   <build>
-    <finalName>SPORTS2</finalName>
+    <finalName>GoSports</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

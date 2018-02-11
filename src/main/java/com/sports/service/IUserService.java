@@ -21,7 +21,7 @@ public interface IUserService {
 
     UserVO findUserById(int Id);
 
-    boolean setUserLikes(String[] likes);
+    boolean setUserLikes(String userId, String sportsLike);
 
     List<FriendRequestVO> getFriendRequests(String user_id, String page_size, String current_page);
 

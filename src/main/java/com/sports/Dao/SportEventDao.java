@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Repository
 public interface SportEventDao {
-    public int createSportEvent(SportEvent sportEvent);
+    int createSportEvent(SportEvent sportEvent);
 
     List<SportEvent> getSportEventsByType(String type);
 }

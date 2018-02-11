@@ -12,4 +12,6 @@ public interface ISportEventService {
     boolean createSportEvent(CreateSportEvent createSportEvent);
 
     List<SportsFirstClass> getSportEventsByType(String type);
+
+    int getUserLikeById(int id);
 }

@@ -43,4 +43,9 @@
     <insert id="createFriendRequest" parameterType="com.sports.pojo.FriendRequest">
       INSERT INTO friend_add_request (user_basic_id,user_friend_id,request_message,request_create_time) VALUES (#{user_basic_id},#{user_friend_id},#{request_message},#{request_create_time})
     </insert>
+
+    <select id="getUserLikeById" parameterType="int"
+            resultType="int">
+        SELECT user_sport_prefer FROM user_detail WHERE user_basic_id=#{id}
+    </select>
 </mapper>

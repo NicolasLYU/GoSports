@@ -67,7 +67,7 @@ public class UserServiceImpl implements com.sports.service.IUserService {
      * @return
      */
     @Override
-    public boolean setUserLikes(String[] likes) {
+    public boolean setUserLikes(String userId, String sportsLike) {
         return true;
     }
 

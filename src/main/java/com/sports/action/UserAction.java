@@ -14,17 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Gundam on 2016/10/25.
  */
 @Controller
 @RequestMapping("/user")
-public class LoginAction extends BaseController {
+public class UserAction extends BaseController {
     @Autowired
     @Qualifier("userService")
     private IUserService userService;
@@ -36,7 +33,7 @@ public class LoginAction extends BaseController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public
     @ResponseBody
-    String login(@RequestParam String loginName, String password) {
+    String login(String loginName, String password) {
         UserVO userInfo = userService.findUserByPwd(loginName, password);
         if (userInfo != null) {
             Map<String, String> result = new HashMap<>();
@@ -75,12 +72,12 @@ public class LoginAction extends BaseController {
         } else return CollectionUtils.getOutCome(SUCCESS, OPERATIONFAILEDMESSAGE, EMPTYRESULT);
     }
 
-    @RequestMapping(value = "/changelike", method = RequestMethod.POST)
+    @RequestMapping(value = "/updatesportslike", method = RequestMethod.POST)
     public
     @ResponseBody
-    String changeLike(@RequestParam String user_id, String user_like) {
-        String[] likes = user_like.split(",");
-        if (userService.setUserLikes(likes)) {
+    String changeLike(String userId, String sportsLike) {
+        //String[] likes = sportsLike.split(",");
+        if (userService.setUserLikes(userId, sportsLike)) {
             return CollectionUtils.getOutCome(SUCCESS, OPERATIONSUCCESSMESSAGE, EMPTYRESULT);
         } else return CollectionUtils.getOutCome(SUCCESS, OPERATIONFAILEDMESSAGE, EMPTYRESULT);
     }
@@ -106,6 +103,8 @@ public class LoginAction extends BaseController {
             return CollectionUtils.getOutCome(SUCCESS, OPERATIONSUCCESSMESSAGE, EMPTYRESULT);
         } else return CollectionUtils.getOutCome(SUCCESS, OPERATIONFAILEDMESSAGE, EMPTYRESULT);
     }
+
+
 
 
     @RequestMapping(value = "/test")
